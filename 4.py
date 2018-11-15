@@ -8,10 +8,6 @@ def getres(r):
 
 h = {'API-AUTHENTICATION':'6c39370b27d0414ea095b47005b09309:4a1fb827c4954c8bb2b56d74cb085f8dfe4ea12a6cf24297824c68f3d0d843bc', 'user-agent':'ernest/test'}
 
-print("Authenticating...")
-r = requests.get('https://api-playground.revelup.com/', headers = h)
-print(r.status_code)
-
-print("Fetching online ordering menu...")
-r = requests.get('https://api-playground.revelup.com/weborders/menu/?establishment=2', headers = h)
+print("Fetching product details for \"Red Sparkling\"...")
+r = requests.get('https://api-playground.revelup.com/weborders/products/?establishment=2&name=\"Red%20Sparkling\"', headers = h)
 print(getres(r))
